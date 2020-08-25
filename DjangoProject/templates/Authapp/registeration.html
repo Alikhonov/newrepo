@@ -1,0 +1,20 @@
+{% extends 'Authapp/base.html' %}
+
+{% block body_block %}
+  <div class="jumbotron">
+    {% if registered %}
+    <h1>thank you for registration</h1>
+    <h3>now, you can easily login</h3>
+    {% else %}
+    <h1>Please register to use our site with full access</h1>
+    <form method="post">
+      {% csrf_token %}
+      {{ userform.as_p }}
+      {{ userinfoform.as_p }}
+      <input type="submit" name="" value="register me">
+    </form>
+    {% endif %}
+
+
+  </div>
+{% endblock %}

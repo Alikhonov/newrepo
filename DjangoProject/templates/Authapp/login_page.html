@@ -1,0 +1,17 @@
+{% extends 'Authapp/base.html' %}
+
+{% block body_block %}
+  <div class="jumbotron">
+    <h1>login page</h1>
+    <form class="" action="{% url 'Authapp:login_page' %}" method="post">
+      {% csrf_token %}
+      <label for="email">username: </label>
+      <input type="text" name="username" palaceholder="username">
+      <label for="password">Password: </label>
+      <input type="text" name="password" placeholder="password">
+      <input type="submit" name="" value="Login">
+
+    </form>
+
+  </div>
+{% endblock %}
